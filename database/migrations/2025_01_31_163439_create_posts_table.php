@@ -18,6 +18,10 @@ return new class extends Migration
             $table->integer('grade');
             $table->text('description')->nullable();
             $table->string('file_path');
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->timestamps();        });
     }
 
