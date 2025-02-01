@@ -35,10 +35,10 @@
             <div class="mb-4">
                 <h2 class="text-center text-lg font-bold pt-6 tracking-widest">現在のファイル</h2>
                 @if ($post->file_path)
-                    @if (in_array(strtolower(pathinfo($post->pdf_url(), PATHINFO_EXTENSION)), ['pdf']))
-                        <iframe src="{{ $post->pdf_url() }}" width="100%" height="600px"></iframe>
+                    @if (in_array(strtolower(pathinfo($post->file_url(), PATHINFO_EXTENSION)), ['pdf']))
+                        <iframe src="{{ $post->file_url() }}" width="100%" height="600px"></iframe>
                     @else
-                        <img src="{{ $post->image_url() }}" alt="" class="mb-4">
+                        <img src="{{ $post->file_url() }}" alt="" class="mb-4">
                     @endif
                 @else
                     <p class="text-gray-500">現在、アップロードされたファイルはありません。</p>

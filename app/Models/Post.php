@@ -26,12 +26,7 @@ class Post extends Model
             ];
     }
 
-    public function image_url()
-    {
-        return Storage::url('files/posts/' . $this->file_path);
-    }
-
-    public function pdf_url()
+    public function file_url()
     {
         return Storage::url('files/posts/' . $this->file_path);
     }

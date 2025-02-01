@@ -19,16 +19,16 @@
             <p class="text-gray-700 ">教科: {{ $post->category }}</p>
             <p class="text-gray-700 ">対象学年: {{ $post->grade }} 年</p>
             
-            <p class="text-gray-700 text-base break-all mt-4">{!! nl2br(e($post->description)) !!}</p>
+            <p class="text-gray-700 text-base break-all mt-4">説明: <br>{!! nl2br(e($post->description)) !!}</p>
             
             @if($post->file_path)
                 <div class="mt-4">
                     <h3 class="font-semibold text-gray-700">指導案・資料</h3>
                     <a href="{{ Storage::url('files/posts/' . $post->file_path) }}" target="_blank" class="text-blue-500 underline">ダウンロード</a>
-                    @if (in_array(strtolower(pathinfo($post->pdf_url(), PATHINFO_EXTENSION)), ['pdf']))
-                        <iframe src="{{ $post->pdf_url() }}" width="100%" height="600px"></iframe>
+                    @if (in_array(strtolower(pathinfo($post->file_url(), PATHINFO_EXTENSION)), ['pdf']))
+                        <iframe src="{{ $post->file_url() }}" width="100%" height="600px"></iframe>
                     @else
-                        <img src="{{ $post->image_url() }}" alt="" class="mb-4">
+                        <img src="{{ $post->file_url() }}" alt="" class="mb-4">
                     @endif
                 </div>
             @endif
