@@ -99,7 +99,7 @@ class PostController extends Controller
 
         $file = $request->file('file_path');
         if ($file) {
-            $delete_file_path = $post->file_path;
+            $delete_file_path = 'files/posts/' . $post->file_path;
             $post->file_path = self::createFileName($file);
         }
         $post->fill($request->all());
@@ -112,7 +112,7 @@ class PostController extends Controller
 
             if ($file) {
                 // 画像アップロード
-                if (!Storage::putFileAs('file_path/posts', $file, $post->file_path)) {
+                if (!Storage::putFileAs('/files/posts', $file, $post->file_path)) {
                     // 例外を投げてロールバックさせる
                     throw new \Exception('ファイルの保存に失敗しました。');
                 }

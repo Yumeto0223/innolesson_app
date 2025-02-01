@@ -13,7 +13,6 @@ class Post extends Model
         'category',
         'grade',
         'description',
-        'file_path',
     ];
 
         public function user()

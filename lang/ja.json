@@ -260,4 +260,6 @@
     "You are receiving this email because we received a password reset request for your account.": "パスワード再設定のリクエストを受け付けました。",
     "You're logged in!": "ログイン成功",
     "Your email address is unverified.": "メールアドレスが未認証です。"
+
+    ,"pagination": ":total件中、:from〜:to件表示"
 }
