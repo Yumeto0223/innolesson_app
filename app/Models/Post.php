@@ -26,6 +26,11 @@ class Post extends Model
             ];
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function file_url()
     {
         return Storage::url('files/posts/' . $this->file_path);
